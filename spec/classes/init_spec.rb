@@ -11,6 +11,7 @@ describe 'apache' do
         context "apache class without any parameters" do
           it { is_expected.to compile.with_all_deps }
 
+          it { is_expected.to contain_class('apache') }
           it { is_expected.to contain_class('apache::params') }
           it { is_expected.to contain_class('apache::install').that_comes_before('apache::config') }
           it { is_expected.to contain_class('apache::config') }
