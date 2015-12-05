@@ -5,8 +5,9 @@
 #
 class apache::service {
 
-  service { $::apache::service_name:
+  service { 'apache':
     ensure     => running,
+    name       => $::apache::service_name,
     enable     => true,
     hasstatus  => true,
     hasrestart => true,
