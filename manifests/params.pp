@@ -6,12 +6,12 @@
 class apache::params {
   case $::osfamily {
     'Debian': {
-      $package_name = 'apache'
-      $service_name = 'apache'
+      $package_name = 'apache2'
+      $service_name = 'apache2'
     }
     'RedHat', 'Amazon': {
-      $package_name = 'apache'
-      $service_name = 'apache'
+      $package_name = 'httpd'
+      $service_name = 'httpd'
     }
     default: {
       fail("${::operatingsystem} not supported")
