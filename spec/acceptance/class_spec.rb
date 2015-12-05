@@ -13,11 +13,11 @@ describe 'apache class' do
       apply_manifest(pp, :catch_changes  => true)
     end
 
-    describe package('apache') do
+    describe package('httpd') do
       it { is_expected.to be_installed }
     end
 
-    describe service('apache') do
+    describe service('httpd') do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
     end
