@@ -17,8 +17,14 @@ describe 'apache' do
           it { is_expected.to contain_class('apache::config') }
           it { is_expected.to contain_class('apache::service').that_subscribes_to('apache::config') }
 
-          it { is_expected.to contain_service('apache') }
-          it { is_expected.to contain_package('apache').with_ensure('present') }
+          case facts[:osfamily]
+          when 'RedHat'
+            it { is_expected.to contain_service('httpd') }
+            it { is_expected.to contain_package('httpd').with_ensure('present') }
+          when 'Debian'
+            it { is_expected.to contain_service('apache2') }
+            it { is_expected.to contain_package('apache2').with_ensure('present') }
+          end
         end
       end
     end

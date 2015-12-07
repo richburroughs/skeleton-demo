@@ -4,8 +4,7 @@
 #
 class apache::install {
 
-  package { 'apache':
+  package { $::apache::package_name:
     ensure => present,
-    name   => $::apache::package_name,
   }
 }
