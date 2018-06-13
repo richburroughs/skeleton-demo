@@ -1,21 +1,11 @@
-## Demo
+## This demo is deprecated
 
-This module is for a demo demonstrating some of the features of Gareth
-Rushgrove's skeleton for Puppet modules.
+This demo was made to illustrate how to create new Puppet modules with Gareth
+Rushgrove's Puppet module skeleton.
 
-There are two branches:
+That method is no longer the recommended way to create new Puppet modules. To
+create new modules you should use the Puppet Development Kit (PDK):
 
-``
-new - This is the module as it was created using "puppet module generate"
-``
+https://puppet.com/download-puppet-development-kit
 
-``
-master - This contains added code changes for the demo
-``
-
-The demo is of an Apache module that was created with:
-
-``
-puppet module generate richburroughs-apache
-``
-
+Puppet provides documentation for the PDK.
